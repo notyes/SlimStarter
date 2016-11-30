@@ -1,5 +1,8 @@
 ###Other###
 app/config/development/*
+app/storage/cache/*
+app/storage/db/*
+app/storage/info/*
 
 ###OSX###
 
@@ -56,4 +59,3 @@ vendor/
 ###KeepList###
 
 !.gitkeep
-
