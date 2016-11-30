@@ -6,6 +6,10 @@ $config = array();
 require __DIR__.'/vendor/autoload.php';
 require __DIR__.'/app/config/database.php';
 
+foreach (glob(APP_PATH.'config/development/*.php') as $configFile) {
+    require $configFile; 
+}
+
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Cartalyst\Sentry\Facades\Native\Sentry;
 

@@ -11,6 +11,8 @@ define('PUBLIC_PATH', __DIR__.'/../../public/');
 
 require VENDOR_PATH.'autoload.php';
 
+require PUBLIC_PATH . 'path-config.php';
+
 /**
  * Load the configuration
  */
@@ -23,6 +25,10 @@ $config = array(
 
 foreach (glob(APP_PATH.'config/*.php') as $configFile) {
     require $configFile;
+}
+
+foreach (glob(APP_PATH.'config/development/*.php') as $configFile) {
+    require $configFile; 
 }
 
 /** Merge cookies config to slim config */

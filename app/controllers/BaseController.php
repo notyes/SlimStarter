@@ -230,8 +230,6 @@ class BaseController
     {
         $this->loadCss("bootstrap.min.css");
         $this->loadCss("font-awesome.min.css");
-        $this->loadCss("sb-admin.css");
-        $this->loadCss("custom.css");
     }
 
     /**
@@ -241,8 +239,6 @@ class BaseController
     {
         $this->loadJs("jquery-1.10.2.js");
         $this->loadJs("bootstrap.min.js");
-        $this->loadJs("plugins/metisMenu/jquery.metisMenu.js");
-        $this->loadJs("sb-admin.js");
     }
 
     /**

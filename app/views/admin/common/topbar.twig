@@ -1,0 +1,112 @@
+{% block TopMenu %}
+
+    <div class="page-wrapper-row">
+        <div class="page-wrapper-top">
+            <div class="page-header">
+                <div class="page-header-top">
+                    <div class="container">
+                        <div class="page-logo">
+                            <a href="index.html">
+                                <img src="../assets/layouts/layout/img/logo-default.jpg" alt="logo" class="logo-default">
+                            </a>
+                        </div>
+                        <a href="javascript:;" class="menu-toggler"></a>
+                        <div class="top-menu">
+                            <ul class="nav navbar-nav pull-right">
+                                <li class="dropdown dropdown-user ">
+                                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                        <img alt="" class="img-circle" src="../assets/layouts/layout/img/avatar9.jpg">
+                                        <span class="username username-hide-mobile">Nick</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-default">
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-user"></i> My Profile 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-calendar"></i> My Calendar 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-envelope-open"></i> My Inbox
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-rocket"></i> My Tasks
+                                            </a>
+                                        </li>
+                                        <li class="divider"> </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-lock"></i> Lock Screen 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{baseUrl()}}/logout">
+                                                <i class="icon-key"></i> Log Out 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="droddown dropdown-separator">
+                                    <span class="separator"></span>
+                                </li>
+
+                                <li class="dropdown quick-sidebar-toggler">
+                                    <i class="icon-logout"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-header-menu">
+                    <div class="container">
+                        <form class="search-form" action="javascript:;" method="GET">
+                            <div class="input-group">
+                                <input type="text" autocomplete="off" class="form-control" placeholder="Search" name="query">
+                                <span class="input-group-btn">
+                                    <a href="javascript:;" class="btn submit">
+                                        <i class="icon-magnifier"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </form>
+                        <div class="hor-menu  ">
+                            <ul class="nav navbar-nav">
+
+
+                                <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                    <a href="javascript:;">
+                                        <i class="icon-briefcase"></i> Pages
+                                        <span class="arrow"></span>
+                                    </a>
+                                    <ul class="dropdown-menu pull-left">
+                                        <li aria-haspopup="true" class="dropdown-submenu ">
+                                            <a href="javascript:;" class="nav-link nav-toggle ">
+                                                <i class="icon-basket"></i> eCommerce
+                                                <span class="arrow"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li aria-haspopup="true" class=" ">
+                                                    <a href="ecommerce_index.html" class="nav-link ">
+                                                        <i class="icon-home"></i> Dashboard 
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
