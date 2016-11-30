@@ -20,6 +20,9 @@ class BaseController extends \BaseController
             'url'   => 'admin'
         ));
 
+        $this->resetCss();
+        $this->resetJs();
+
         $this->loadCss("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" , array( 'location' => 'external' ));
         $this->loadCss("/assets/global/plugins/font-awesome/css/font-awesome.min.css" , array( 'location' => 'external' ));
         $this->loadCss("/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" , array( 'location' => 'external' ));
@@ -28,7 +31,7 @@ class BaseController extends \BaseController
         $this->loadCss("/assets/global/css/components.min.css" , array( 'location' => 'external' ));
         $this->loadCss("/assets/global/css/plugins.min.css" , array( 'location' => 'external' ));
         $this->loadCss("/assets/layouts/layout/css/layout.min.css" , array( 'location' => 'external' ));
-        $this->loadCss("/assets/layouts/layout/css/default.min.css" , array( 'location' => 'external' ));
+        $this->loadCss("/assets/layouts/layout/css/themes/default.min.css" , array( 'location' => 'external' ));
         $this->loadCss("/assets/layouts/layout/css/custom.min.css" , array( 'location' => 'external' ));
 
         $this->loadJs("/assets/global/plugins/jquery.min.js" , array( 'location' => 'external' ));
@@ -40,6 +43,8 @@ class BaseController extends \BaseController
         $this->loadJs("/assets/global/scripts/app.js" , array( 'location' => 'external' ));
         $this->loadJs("/assets/layouts/layout/scripts/layout.min.js" , array( 'location' => 'external' ));
         $this->loadJs("/assets/layouts/layout/scripts/demo.min.js" , array( 'location' => 'external' ));
+        $this->loadJs("/assets/layouts/global/scripts/quick-sidebar.min.js" , array( 'location' => 'external' ));
+        $this->loadJs("/assets/layouts/global/scripts/quick-nav.min.js" , array( 'location' => 'external' ));
 
         $adminMenu->addItem('dashboard', $dashboard);
         $adminMenu->setActiveMenu('dashboard');

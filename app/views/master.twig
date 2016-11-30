@@ -24,17 +24,17 @@
     {% endfor %}
 
 </head>
-<body class="page-container-bg-solid" >
-    {% block body %}{% endblock %}
+    <body class="page-container-bg-solid" >
+        {% block body %}{% endblock %}
 
-    <!-- Include registered javascript -->
-    {% for jsfile in js.internal %}
-    <script src="{{assetUrl}}js/{{jsfile}}"></script>
-    {% endfor %}
-    
-    {% for jsfile in js.external %}
-    <script src="{{jsfile}}"></script>
-    {% endfor %}
+        <!-- Include registered javascript -->
+        {% for jsfile in js.external %}
+        <script src="{{jsfile}}"></script>
+        {% endfor %}
 
-</body>
+        {% for jsfile in js.internal %}
+        <script src="{{assetUrl}}js/{{jsfile}}"></script>
+        {% endfor %}
+        
+    </body>
 </html>
