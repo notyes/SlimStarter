@@ -2,46 +2,46 @@
 
 {% block body %}
 
-    <div class="page-wrapper">
-        
-        {{include('admin/common/topbar.twig')}}
+  <div class="page-wrapper">
 
-        <div class="page-wrapper-row full-height">
-            <div class="page-wrapper-middle">
-                <div class="page-container">
-                    <div class="page-content-wrapper">
-                        <div class="page-head">
-                            <div class="container">
-                                <div class="page-title">
-                                    <h1>Light Top Menu </h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="page-content">
-                            <div class="container">
-                                <ul class="page-breadcrumb breadcrumb">
-                                    <li>
-                                        <a href="index.html">Home</a>
-                                        <i class="fa fa-circle"></i>
-                                    </li>
-                                    <li>
-                                        <span>Layouts</span>
-                                    </li>
-                                </ul>
-                                <div class="page-content-inner">
+    {{include('admin/common/topbar.twig')}}
 
-                                    {% block content %}{% endblock %}
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="page-wrapper-row full-height">
+      <div class="page-wrapper-middle">
+        <div class="page-container">
+          <div class="page-content-wrapper">
+            <div class="page-head">
+              <div class="container">
+                <div class="page-title">
+                  <h1>Light Top Menu </h1>
                 </div>
+              </div>
             </div>
-        </div>
-    
-        {{include('admin/common/footer.twig')}}
+            <div class="page-content">
+              <div class="container">
+                <ul class="page-breadcrumb breadcrumb">
+                  <li>
+                    <a href="index.html">Home</a>
+                    <i class="fa fa-circle"></i>
+                  </li>
+                  <li>
+                    <span>Layouts</span>
+                  </li>
+                </ul>
+                <div class="page-content-inner">
 
+                  {% block content %}{% endblock %}
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    {{include('admin/common/footer.twig')}}
+
+  </div>
 
 {% endblock %}

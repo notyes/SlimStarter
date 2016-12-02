@@ -7,6 +7,7 @@ use \View;
 use \Input;
 use \Sentry;
 use \Response;
+use \Member;
 
 class AdminController extends BaseController
 {
@@ -16,6 +17,12 @@ class AdminController extends BaseController
      */
     public function index()
     {
+
+        // echo '<pre>';
+        // print_r( $this->data['accountAdmin'] );
+        // echo '</pre>';
+        // die();
+
         View::display('admin/common/index.twig', $this->data);
     }
 
@@ -35,7 +42,6 @@ class AdminController extends BaseController
             $this->loadCss("font-awesome.min.css");
             $this->loadCss("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" , array( 'location' => 'external' ));
             $this->loadCss("assets/global/plugins/simple-line-icons/simple-line-icons.min.css" , array( 'location' => 'external' ));
-            $this->loadCss("assets/global/plugins/uniform/css/uniform.default.css" , array( 'location' => 'external' ));
             $this->loadCss("assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" , array( 'location' => 'external' ));
             $this->loadCss("assets/global/plugins/select2/css/select2.min.css" , array( 'location' => 'external' ));
             $this->loadCss("assets/global/plugins/select2/css/select2-bootstrap.min.css" , array( 'location' => 'external' ));
@@ -48,7 +54,6 @@ class AdminController extends BaseController
             $this->loadJs("assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" , array( 'location' => 'external' ));
             $this->loadJs("assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" , array( 'location' => 'external' ));
             $this->loadJs("assets/global/plugins/jquery.blockui.min.js" , array( 'location' => 'external' ));
-            $this->loadJs("assets/global/plugins/uniform/jquery.uniform.min.js" , array( 'location' => 'external' ));
             $this->loadJs("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" , array( 'location' => 'external' ));
             $this->loadJs("assets/global/plugins/jquery-validation/js/jquery.validate.min.js" , array( 'location' => 'external' ));
             $this->loadJs("assets/global/plugins/jquery-validation/js/additional-methods.min.js" , array( 'location' => 'external' ));

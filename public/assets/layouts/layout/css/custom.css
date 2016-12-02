@@ -1,1 +1,30 @@
 /* here you can put your own css to customize and override the theme */
+
+.fa.fa-2 {
+    font-size: 2em
+}
+.fa.fa-3 {
+    font-size: 4em
+}
+.fa.fa-4 {
+    font-size: 7em
+}
+.fa.fa-5 {
+    font-size: 12em
+}
+.fa.fa-6 {
+    font-size: 20em
+}
+.fa.fa-1,
+.fa.fa-2,
+.fa.fa-3,
+.fa.fa-4,
+.fa.fa-5,
+.fa.fa-6 {
+    margin-right: .07142857em
+}
+
+.top-menu .nav > li > a:focus,.top-menu .nav > li > a:hover {
+    background: none;
+    text-decoration: none;
+}

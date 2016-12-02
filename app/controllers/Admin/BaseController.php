@@ -4,9 +4,12 @@ namespace Admin;
 use \App;
 use \Menu;
 use \Module;
+use \Sentry;
 
 class BaseController extends \BaseController
 {
+
+    public $user;
 
     public function __construct()
     {
@@ -24,7 +27,7 @@ class BaseController extends \BaseController
         $this->resetJs();
 
         $this->loadCss("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" , array( 'location' => 'external' ));
-        $this->loadCss("/assets/global/plugins/font-awesome/css/font-awesome.min.css" , array( 'location' => 'external' ));
+        $this->loadCss("/node_modules/font-awesome/css/font-awesome.min.css" , array( 'location' => 'external' ));
         $this->loadCss("/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" , array( 'location' => 'external' ));
         $this->loadCss("/assets/global/plugins/bootstrap/css/bootstrap.min.css" , array( 'location' => 'external' ));
         $this->loadCss("/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" , array( 'location' => 'external' ));
@@ -32,7 +35,7 @@ class BaseController extends \BaseController
         $this->loadCss("/assets/global/css/plugins.min.css" , array( 'location' => 'external' ));
         $this->loadCss("/assets/layouts/layout/css/layout.min.css" , array( 'location' => 'external' ));
         $this->loadCss("/assets/layouts/layout/css/themes/default.min.css" , array( 'location' => 'external' ));
-        $this->loadCss("/assets/layouts/layout/css/custom.min.css" , array( 'location' => 'external' ));
+        $this->loadCss("/assets/layouts/layout/css/custom.css" , array( 'location' => 'external' ));
 
         $this->loadJs("/assets/global/plugins/jquery.min.js" , array( 'location' => 'external' ));
         $this->loadJs("/assets/global/plugins/bootstrap/js/bootstrap.min.js" , array( 'location' => 'external' ));
@@ -48,6 +51,14 @@ class BaseController extends \BaseController
 
         $adminMenu->addItem('dashboard', $dashboard);
         $adminMenu->setActiveMenu('dashboard');
+
+        // get account admin 
+        $user = Sentry::getUser();
+        if (! empty( $user )) {
+            $this->data['accountAdmin']['first_name'] = $user->first_name;
+            $this->data['accountAdmin']['last_name'] = $user->last_name;
+            $this->data['accountAdmin']['email'] = $user->email;
+        }
 
         foreach (Module::getModules() as $module) {
             $module->registerAdminMenu();

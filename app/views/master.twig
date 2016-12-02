@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html ng-app>
 <head>
-    <title>{{ title }}</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% for metaname, metavalue in meta %}
+  {% for metaname, metavalue in meta %}
     <meta name="{{metaname}}" value="{{metavalue}}" />
-    {% endfor %}
+  {% endfor %}
 
-    <!-- publish javascript variable -->
-    <script>
-        var global = {{global|json_encode|raw}}
-    </script>
+  <!-- publish javascript variable -->
+  <script>
+    var global = {{global|json_encode|raw}}
+  </script>
 
-    <!-- Include registered css -->
-    {% for cssfile in css.internal %}
+  <!-- Include registered css -->
+  {% for cssfile in css.internal %}
     <link rel="stylesheet" href="{{assetUrl}}css/{{cssfile}}" />
-    {% endfor %}
+  {% endfor %}
 
-    {% for cssfile in css.external %}
+  {% for cssfile in css.external %}
     <link rel="stylesheet" href="{{cssfile}}" />
-    {% endfor %}
+  {% endfor %}
 
 </head>
-    <body class="page-container-bg-solid" >
-        {% block body %}{% endblock %}
+<body class="page-container-bg-solid" >
+  {% block body %}{% endblock %}
 
-        <!-- Include registered javascript -->
-        {% for jsfile in js.external %}
-        <script src="{{jsfile}}"></script>
-        {% endfor %}
+    <!-- Include registered javascript -->
+    {% for jsfile in js.internal %}
+      <script src="{{assetUrl}}js/{{jsfile}}"></script>
+    {% endfor %}
+    
+    {% for jsfile in js.external %}
+      <script src="{{jsfile}}"></script>
+    {% endfor %}
 
-        {% for jsfile in js.internal %}
-        <script src="{{assetUrl}}js/{{jsfile}}"></script>
-        {% endfor %}
-        
-    </body>
-</html>
+    
+  </body>
+  </html>

@@ -229,7 +229,7 @@ class BaseController
     protected function loadBaseCss()
     {
         $this->loadCss("bootstrap.min.css");
-        $this->loadCss("font-awesome.min.css");
+        $this->loadCss("/node_modules/font-awesome/css/font-awesome.min.css" , array( 'location' => 'external' ));
     }
 
     /**
