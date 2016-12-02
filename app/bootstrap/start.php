@@ -11,6 +11,8 @@ define('PUBLIC_PATH', __DIR__.'/../../public/');
 
 require VENDOR_PATH.'autoload.php';
 
+require PUBLIC_PATH . 'path-config.php';
+
 /**
  * Load the configuration
  */
